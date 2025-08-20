@@ -1,5 +1,5 @@
 # Dockerfile for Flask App
-FROM python:3.9-slim
+FROM python:3.13-slim
 
 WORKDIR /app
 
@@ -10,7 +10,7 @@ COPY . .
 
 EXPOSE 5000
 
-ENV DB_HOST=mysql
+ENV DB_HOST=mysql-db
 ENV DB_USER=root
 ENV DB_PASSWORD=password
 ENV DB_DATABASE=webapp
