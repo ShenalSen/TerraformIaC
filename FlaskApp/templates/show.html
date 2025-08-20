@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head><title>Show Items</title></head>
+<body>
+    <h1>Your Items</h1>
+    <ul>
+        {% for item in items %}
+        <li>{{ item.content }} - <a href="/delete/{{ item.id }}">Delete</a></li>
+        {% endfor %}
+    </ul>
+    <a href="/add">Add More</a>
+</body>
+</html>
