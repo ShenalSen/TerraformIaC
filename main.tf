@@ -51,7 +51,7 @@ resource "docker_image" "flask_app_image" {
 resource "docker_container" "flask_app" {
   name  = "flask-app"
   image = docker_image.flask_app_image.name
-
+  
   restart = "on-failure"
 
   networks_advanced {
@@ -71,6 +71,7 @@ resource "docker_container" "flask_app" {
     "DB_PASSWORD=password",
     "DB_DATABASE=webapp"
   ]
+
 
   # Ensure MySQL container is healthy before starting Flask app
   depends_on = [
